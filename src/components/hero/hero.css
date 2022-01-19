@@ -1,0 +1,44 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-image: url('https://res.cloudinary.com/starlink/image/upload/v1642319456/he/wedding-gd8e4ffa9e_1920_jdab2l.jpg');
+  background-size: cover;
+  background-position: top;
+}
+
+.hero__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: opacity(.5);
+  background: #000;
+}
+
+.hero__body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__body--title {
+  /* font-family: 'Pinyon Script', cursive; */
+  font-family: 'Great Vibes', cursive;
+  font-size: 70px;
+  color: white;
+}
+
+.hero__body--arrow {
+  max-width: 70%;
+  height: 120px;
+}
+
+.hero__body--date {
+  font-family: 'Pinyon Script', cursive;
+  color: white;
+  font-size: 30px;
+}

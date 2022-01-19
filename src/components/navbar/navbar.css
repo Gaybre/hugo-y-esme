@@ -1,0 +1,12 @@
+.navbar ul.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar ul.menu li {
+  margin: 0 20px;
+}
+.navbar ul.menu li:hover {
+  text-decoration: underline;
+}

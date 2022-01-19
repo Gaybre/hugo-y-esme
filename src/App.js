@@ -1,12 +1,7 @@
 import React from 'react';
 import './styles/styles.css';
+import Home from './pages/Home';
 
-const App = () => {
-  return (
-    <div>
-      <h1 className='wrapper'>Hugo&Esme</h1>
-    </div>
-  )
-}
+const App = () => <Home />
 
-export default App
+export default App;

@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+html {
+  font-family: 'Delius Swash Caps', cursive;
 }
 
 .wrapper {
   margin: 0 auto;
-  padding: 20px;
-  max-width: 1024px;
+  /*max-width: 1024px;*/
 }
