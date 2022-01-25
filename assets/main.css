@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: 'Delius Swash Caps', cursive;
+}
+
+.wrapper {
+  margin: 0 auto;
+  /*max-width: 1024px;*/
+}
+.navbar ul.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar ul.menu li {
+  margin: 0 20px;
+}
+.navbar ul.menu li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 1px 10px #ebebeb;
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+}
+
+.header img {
+  height: 50px;
+}
+
+.header .icon-profile {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-image: url('https://res.cloudinary.com/starlink/image/upload/v1642319456/he/wedding-gd8e4ffa9e_1920_jdab2l.jpg');
+  background-size: cover;
+  background-position: top;
+}
+
+.hero__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: opacity(.5);
+  background: #000;
+}
+
+.hero__body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__body--title {
+  /* font-family: 'Pinyon Script', cursive; */
+  font-family: 'Great Vibes', cursive;
+  font-size: 70px;
+  color: white;
+}
+
+.hero__body--arrow {
+  max-width: 70%;
+  height: 120px;
+}
+
+.hero__body--date {
+  font-family: 'Pinyon Script', cursive;
+  color: white;
+  font-size: 30px;
+}
