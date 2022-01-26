@@ -6,13 +6,16 @@
   margin: 0;
   padding: 0;
 }
-html {
+html, body {
   font-family: 'Delius Swash Caps', cursive;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(#fefefe, #e6d579);
 }
 
 .wrapper {
   margin: 0 auto;
-  /*max-width: 1024px;*/
+  max-width: 1024px;
 }
 .navbar ul.menu {
   display: flex;
@@ -25,7 +28,6 @@ html {
 }
 .navbar ul.menu li:hover {
   text-decoration: underline;
-  cursor: pointer;
 }
 
 .header {
@@ -93,3 +95,23 @@ html {
   color: white;
   font-size: 30px;
 }
+.invitation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 100px auto;
+  padding: 50px 0;
+  min-height: 390px;
+  height: fit-content;
+  border-radius: 20px;
+  background: rgba(255,255,255,.5);
+  /* box-shadow: -1px 1px 5px #fff; */
+  box-shadow: -1px 1px 10px gold;
+}
+
+.invitation-container img {
+  margin: 0 auto;
+}
+
+
+
