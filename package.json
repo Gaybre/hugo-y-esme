@@ -1,11 +1,14 @@
 {
+  "homepage": "https://Gaybre.github.io/hugo-y-esme",
   "name": "hugo-y-esme",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "webpack-dev-server --open --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "Javascript",
@@ -24,6 +27,7 @@
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
+    "gh-pages": "^3.2.3",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.6",
