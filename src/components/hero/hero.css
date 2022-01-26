@@ -26,9 +26,9 @@
 }
 
 .hero__body--title {
-  /* font-family: 'Pinyon Script', cursive; */
   font-family: 'Great Vibes', cursive;
   font-size: 70px;
+  letter-spacing: 2px;
   color: white;
 }
 
@@ -41,4 +41,16 @@
   font-family: 'Pinyon Script', cursive;
   color: white;
   font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 250px;
+  }
+  .hero__body--title {
+    font-size: 40px;
+  }
+  .hero__body--arrow {
+    height: 90px;
+  }
 }
