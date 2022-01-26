@@ -1,3 +1,7 @@
+.navbar {
+  display: flex;
+}
+
 .navbar ul.menu {
   display: flex;
   align-items: center;
@@ -9,4 +13,5 @@
 }
 .navbar ul.menu li:hover {
   text-decoration: underline;
+  cursor: pointer;
 }

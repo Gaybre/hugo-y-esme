@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 500px;
   background-image: url('https://res.cloudinary.com/starlink/image/upload/v1642319456/he/wedding-gd8e4ffa9e_1920_jdab2l.jpg');
   background-size: cover;
   background-position: top;
@@ -19,6 +19,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +46,7 @@
 
 @media screen and (max-width: 600px) {
   .hero {
-    height: 250px;
+    height: 400px;
   }
   .hero__body--title {
     font-size: 40px;
