@@ -1,13 +1,15 @@
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   box-shadow: 0 1px 10px #ebebeb;
-}
-
-.header > div {
-  display: flex;
-  align-items: center;
+  background-color: rgba(255, 255, 255, .3);
+  z-index: 5;
 }
 
 .header img {
@@ -18,4 +20,34 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
+}
+
+.header__menu--web {
+  display: flex;
+}
+
+.header__menu--mobile {
+  display: none;
+}
+
+.header__menu--mobile img {
+  width: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 10px;
+  }
+
+  .header img {
+    height: 40px;
+  }
+
+  .header__menu--web {
+    display: none;
+  }
+
+  .header__menu--mobile {
+    display: inherit;
+  }
 }
