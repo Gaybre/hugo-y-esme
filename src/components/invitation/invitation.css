@@ -8,10 +8,21 @@
   height: fit-content;
   border-radius: 20px;
   background: rgba(255,255,255,.5);
-  /* box-shadow: -1px 1px 5px #fff; */
   box-shadow: -1px 1px 10px gold;
 }
 
 .invitation-container img {
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .invitation-container img {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .invitation-container img {
+    max-width: 90%;
+  }
 }
