@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,6 +34,89 @@ html, body {
   }
 }
 
+/* NOTE: I only tested this on Google Chrome.*/
+
+body{
+  background: #FBD4C5;
+}
+
+.container{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.container h1:nth-child(1) {
+  color: #355c7d;
+  font-family: 'Fira Code', monospace;
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 0 0 0 35%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 220px;
+  animation: type 2s steps(40,end) forwards;
+}
+
+.container h1:nth-child(2) {
+  opacity: 0;
+  font-family: "Work Sans", sans-serif;
+  margin: 0 auto auto auto;
+  background: linear-gradient(to right, #f8b195, #f67280, #c06c84);
+  font-weight: 800;
+  font-size: 100px;
+  width: 430px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  animation: shring-animation 2.2s steps(40,end) 2s forwards, blink .5s step-end infinite alternate;
+}
+
+@keyframes shring-animation {
+  0% {
+    background-position: 0 0;
+    opacity: 0;
+    width: 0;
+  }
+  1% {
+    background-position: 0 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+  50% {
+    background-position: 150px 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+  100% {
+    background-position: 400px 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  1%, 99%{
+    border-right: 1px solid orange;
+  }
+  100%{
+    border-right: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 .navbar {
   display: flex;
 }
@@ -57,6 +141,7 @@ html, body {
   left: 0;
   right: 0;
   display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
@@ -108,7 +193,7 @@ html, body {
 .hero {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 100vh;
   background-image: url('https://res.cloudinary.com/starlink/image/upload/v1642319456/he/wedding-gd8e4ffa9e_1920_jdab2l.jpg');
   background-size: cover;
   background-position: top;
@@ -126,10 +211,8 @@ html, body {
   position: absolute;
   width: 100%;
   height: 100%;
-  padding-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
   justify-content: center;
 }
 
@@ -138,22 +221,27 @@ html, body {
   font-size: 70px;
   letter-spacing: 2px;
   color: white;
+  align-self: end;
 }
 
 .hero__body--arrow {
   max-width: 70%;
   height: 120px;
+  justify-self: center;
+  animation: 2s 1 spinn;
+  /* animation: 4s 1 fadeIm; */
 }
 
 .hero__body--date {
   font-family: 'Pinyon Script', cursive;
   color: white;
   font-size: 30px;
+  justify-self: center;
 }
 
 @media screen and (max-width: 600px) {
   .hero {
-    height: 400px;
+    /* height: 400px; */
   }
   .hero__body--title {
     font-size: 40px;
@@ -162,6 +250,53 @@ html, body {
     height: 90px;
   }
 }
+
+.charOpacity {
+  display: inline;
+  animation-name: fadeInAnimationStyle;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadeIm {
+  0% {
+    opacity: .1;
+    transform: scale(.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+@keyframes fadeInAnimationStyle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spinn {
+  0% {
+    transform: rotateY(0deg) scale(.2);
+  }
+  25% {
+    transform: rotateY(90deg) scale(.3);
+  }
+  50% {
+    transform: rotateY(180deg) scale(.5);
+  }
+  75% {
+    transform: rotateY(270deg) scale(.7);
+  }
+  100% {
+    transform: rotateY(380deg) scale(1);
+  }
+}
+
 .invitation-container {
   display: flex;
   flex-direction: column;
@@ -191,5 +326,24 @@ html, body {
   }
 }
 
+.witheMarginContainer {
+  padding: 250px 0;
+}
 
+.goToInvitation {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  font-size: 1.5rem;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  color: pink;
+  text-align: center;
+}
 
+.goToInvitation img {
+  align-self: center;
+  width: 5rem;
+}
