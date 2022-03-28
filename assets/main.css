@@ -10,12 +10,8 @@
 
 html, body {
   font-family: 'Delius Swash Caps', cursive;
-  background: linear-gradient(#fefefe, #e6d579);
-}
-
-.wrapper {
-  margin: 0 auto;
-  max-width: 1024px;
+  /* background: linear-gradient(#fefefe, #e6d579); */
+  background: #fcf3ea;
 }
 
 .drop-shadow {
@@ -37,7 +33,7 @@ html, body {
 /* NOTE: I only tested this on Google Chrome.*/
 
 body{
-  background: #FBD4C5;
+  /* background: #FBD4C5; */
 }
 
 .container{
@@ -53,11 +49,11 @@ body{
   font-family: 'Fira Code', monospace;
   font-weight: 800;
   font-size: 2rem;
-  margin: 0 0 0 35%;
-  text-align: left;
+  margin: 0;
+  text-align: right;
   white-space: nowrap;
   overflow: hidden;
-  width: 220px;
+  width: 80%;
   animation: type 2s steps(40,end) forwards;
 }
 
@@ -68,12 +64,21 @@ body{
   background: linear-gradient(to right, #f8b195, #f67280, #c06c84);
   font-weight: 800;
   font-size: 100px;
-  width: 430px;
+  width: 98%;
+  max-width: 430px;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   overflow: hidden;
   animation: shring-animation 2.2s steps(40,end) 2s forwards, blink .5s step-end infinite alternate;
+}
+
+@media screen and (max-width: 600px) {
+  .container h1:nth-child(2) {
+    font-size: 80px;
+    width: 98%;
+    max-width: 430px;
+  }
 }
 
 @keyframes shring-animation {
@@ -306,7 +311,7 @@ body{
   min-height: 390px;
   height: fit-content;
   border-radius: 20px;
-  background: rgba(255,255,255,.5);
+  /* background: rgba(255,255,255,.5); */
   box-shadow: -1px 1px 10px gold;
 }
 
@@ -326,24 +331,66 @@ body{
   }
 }
 
-.witheMarginContainer {
-  padding: 250px 0;
+.wrapper {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 250px;
+  margin-bottom: 150px;
+  padding: 20px 1%;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 0 10px #f0e8e8;
 }
-
 .goToInvitation {
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 0;
-  font-size: 1.5rem;
+  bottom: 1%;
+  font-size: 1rem;
   right: 0;
   left: 0;
   margin: 0 auto;
   color: pink;
   text-align: center;
+  animation: fade 6s 1;
+  /* animation: type 2s steps(40,end) forwards; */
 }
 
 .goToInvitation img {
   align-self: center;
-  width: 5rem;
+  width: 2rem;
+}
+
+.profile {
+  position: relative;
+  margin-bottom: 150px;
+}
+
+.profile img {
+  position: absolute;
+  top: -100px;
+  right: 0;
+  left: 0;
+  width: 180px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 5px solid wheat;
+  border-radius: 50%;
+  background-color: white;
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(.1);
+    opacity: .0;
+  }
+  80% {
+    transform: scale(.1);
+    opacity: .2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
