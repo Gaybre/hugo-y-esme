@@ -2,6 +2,61 @@
 @import url(https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap);
+:root {
+  /*---------- colors ----------*/
+  --gold: rgb(240, 205, 6);
+  --gold-2: rgb(163, 148, 63);
+
+  --white: white;
+
+  /*----------- fonts -----------*/
+  --font-title: 'Great Vibes', cursive;
+  --font-text: 'Delius Swash Caps', cursive;
+
+  /*----------- size -----------*/
+  --size-small: 10px;
+  --size-medium: 20px;
+  --size-large: 50px;
+  --size-extra-large: 80px;
+
+  /*------- border-radius -------*/
+  --border-radius-small: 4px;
+  --border-radius: 8px;
+
+  /*---------- shadow -----------*/
+  --box-shadow: 0 0 15px rgb(145, 143, 143);
+  --text-shadow: 0 0 15px rgb(145, 143, 143);
+  --text-shadow-gold-small: 0 0 2px var(--gold);
+  --text-shadow-gold: 0 0 10px var(--gold);
+  
+  /*---------- shadow -----------*/
+  --blink-in-gold: blink-in-gold 2s infinite;
+
+  /*-------- screen size -------*/
+  --phone: 600px;
+  --tablet: 768px;
+  --desktop: 1024px;
+}
+
+
+/* -------------------------- animations */
+@keyframes blink-in-gold {
+  0% {
+    text-shadow: var(--text-shadow-gold-small);
+    transform: scale(1.01);
+    /* color: var(--white); */
+  }
+  50% {
+    text-shadow: none;
+    transform: scale(1);
+    /* color: var(--gold-2); */
+  }
+  100% {
+    text-shadow: var(--text-shadow-gold-small);
+    transform: scale(1.01);
+    /* color: var(--white); */
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +64,7 @@
 }
 
 html, body {
-  font-family: 'Delius Swash Caps', cursive;
+  font-family: var(--font-text);
   font-size: 16px;
   /* background: linear-gradient(#fefefe, #e6d579); */
   background: #fcf3ea;
@@ -17,7 +72,7 @@ html, body {
 }
 
 .drop-shadow {
-  filter: drop-shadow(0 0 0.35rem gold);
+  filter: drop-shadow(0 0 0.35rem var(--gold));
 }
 
 @media screen and (max-width: 1024px) {
@@ -32,6 +87,61 @@ html, body {
   }
 }
 
+:root {
+  /*---------- colors ----------*/
+  --gold: rgb(240, 205, 6);
+  --gold-2: rgb(163, 148, 63);
+
+  --white: white;
+
+  /*----------- fonts -----------*/
+  --font-title: 'Great Vibes', cursive;
+  --font-text: 'Delius Swash Caps', cursive;
+
+  /*----------- size -----------*/
+  --size-small: 10px;
+  --size-medium: 20px;
+  --size-large: 50px;
+  --size-extra-large: 80px;
+
+  /*------- border-radius -------*/
+  --border-radius-small: 4px;
+  --border-radius: 8px;
+
+  /*---------- shadow -----------*/
+  --box-shadow: 0 0 15px rgb(145, 143, 143);
+  --text-shadow: 0 0 15px rgb(145, 143, 143);
+  --text-shadow-gold-small: 0 0 2px var(--gold);
+  --text-shadow-gold: 0 0 10px var(--gold);
+  
+  /*---------- shadow -----------*/
+  --blink-in-gold: blink-in-gold 2s infinite;
+
+  /*-------- screen size -------*/
+  --phone: 600px;
+  --tablet: 768px;
+  --desktop: 1024px;
+}
+
+
+/* -------------------------- animations */
+@keyframes blink-in-gold {
+  0% {
+    text-shadow: var(--text-shadow-gold-small);
+    transform: scale(1.01);
+    /* color: var(--white); */
+  }
+  50% {
+    text-shadow: none;
+    transform: scale(1);
+    /* color: var(--gold-2); */
+  }
+  100% {
+    text-shadow: var(--text-shadow-gold-small);
+    transform: scale(1.01);
+    /* color: var(--white); */
+  }
+}
 /* NOTE: I only tested this on Google Chrome.*/
 
 body{
@@ -304,35 +414,143 @@ body{
   }
 }
 
-.invitation-container {
+/*---------------------------- container  */
+.invitation {
+  position: relative;
+  width: fit-content;
+  max-width: 50%;
+  margin: var(--size-large) auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 100px auto;
-  padding: 50px 0;
-  min-height: 390px;
-  height: fit-content;
-  border-radius: 20px;
-  /* background: rgba(255,255,255,.5); */
-  box-shadow: -1px 1px 10px gold;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  border-radius: var(--border-radius-small);
 }
 
-.invitation-container img {
+.invitation::after {
+  content: '';
+  position: absolute;
+  top: var(--size-medium);
+  bottom: var(--size-medium);
+  left: var(--size-medium);
+  right: var(--size-medium);
+  border: 2px solid gold;
+}
+
+/*---------------------------- header  */
+.invitation__header {
+  position: relative;
+}
+
+.invitation__header img {
+  width: 100%;
   margin: 0 auto;
+  filter: saturate(0.6);
+  border-top-left-radius: var(--border-radius-small);
+  border-top-right-radius: var(--border-radius-small);
+}
+
+.invitation__header h2 {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  color: var(--white);
+  font-size: 3.5rem;
+  font-family: var(--font-title);
+  text-shadow: var(--text-shadow-gold);
+}
+
+/*---------------------------- body  */
+.invitation__body p {
+  margin-top: var(--size-medium);
+  font-size: 1rem;
+}
+
+.invitation__body button {
+  margin: var(--size-large) 0;
+  font-family: var(--font-text);
+  font-size: 1.5rem;
+  color: var(--gold-2);
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  text-shadow: 0 0 1px gray;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+  animation: var(--blink-in-gold);
+}
+
+.invitation button:hover {
+  text-shadow: 0 0 10px pink;
+  letter-spacing: .3px;
+  cursor: pointer;
+}
+
+.invitation button:active {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px pink;
+}
+
+/*----------------------------*/
+
+@media screen and (max-width: 1024px) {
+  .invitation {
+    max-width: 60%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .invitation-container img {
-    max-width: 80%;
+  .invitation {
+    max-width: 70%;
+  }
+
+  .invitation__header h2 {
+  font-size: 3rem;
+  }
+
+  .invitation__body p {
+    font-size: .85rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .invitation-container img {
-    max-width: 90%;
+  .invitation {
+    max-width: 80%;
+  }
+
+  .invitation::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .invitation__header h2 {
+    font-size: 2.5rem;
+  }
+
+  .invitation__body p {
+    margin-top: calc(var(--size-medium)*2);
+    font-size: .65rem;
+  }
+
+  .invitation__body button {
+    margin: var(--size-medium) 0;
+    font-size: 1.3rem;
   }
 }
 
+.center {
+  text-align: center;
+  margin: 150px 0;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -401,18 +619,19 @@ body{
   flex-direction: column;
   position: absolute;
   bottom: 1%;
-  font-size: 1rem;
+  font-size: 1.3rem;
   right: 0;
   left: 0;
   margin: 0 auto;
   color: pink;
   text-align: center;
   animation: fade 6s 1;
+  text-shadow: 0 0 2px pink;
 }
 
 .go-down img {
   align-self: center;
-  width: 2rem;
+  width: 2.5rem;
 }
 
 .main {
@@ -435,46 +654,6 @@ body{
   border-radius: 50%;
   box-shadow: 0 0 10px #f0e8e8;
   box-shadow: 0 0 10px #a28696;
-}
-
-.main .open-invitation {
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main .open-invitation img {
-  /* max-width: 80%; */
-  width: 60%;
-  margin: 0 auto;
-  /* height: auto; */
-}
-
-.main .open-invitation button {
-  margin: 20px 0;
-  padding: 20px 0;
-  font-size: 1.5rem;
-  color: pink;
-  text-align: center;
-  border: none;
-  background-color: transparent;
-  text-decoration: underline;
-  text-shadow: 0 0 3px pink;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.main .open-invitation button:hover {
-  text-shadow: 0 0 10px pink;
-  letter-spacing: .3px;
-}
-
-.main .open-invitation button:active {
-  transform: scale(1.2);
-  text-shadow: 0 0 10px pink;
 }
 
 @keyframes fade {
